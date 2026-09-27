@@ -41,7 +41,7 @@ variants), **x64dbg / x32dbg / x96dbg**, **Ghidra**, **Binary Ninja**,
 **Wireshark**, **Fiddler**, **PE-bear / PEStudio**, and more (see the lists in
 [`src/antidbg_tools.c`](../src/antidbg_tools.c)).
 
-> ⚠️ **False positives:** this is a host-wide check, so it fires on a developer's
+> **False positives:** this is a host-wide check, so it fires on a developer's
 > own machine if they happen to have any of these open. It has its own flag, so
 > exclude it from the guard via `cfg.techniques` (a mask **without**
 > `ADBG_ANALYSIS_TOOL`) when that trade-off is wrong for you.

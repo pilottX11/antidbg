@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🛡️ antidbg
+# antidbg
 
 **A small, cross-platform anti-debugging library for software protection.**
 
@@ -27,7 +27,7 @@ background **guard** that re-checks on an interval, so a debugger that attaches
 
 No dependencies. No build system lock-in. Drop it in and go.
 
-## ✨ Features
+## Features
 
 - **One-line detection** — `if (adbg_detected()) { ... }`
 - **Continuous guard** — a background thread that fires your callback the moment a debugger appears
@@ -37,7 +37,7 @@ No dependencies. No build system lock-in. Drop it in and go.
 - **Tiny & portable** — C99, static or shared, ~600 lines
 - **Python binding** included via `ctypes`
 
-## 🚀 Quick start
+## Quick start
 
 ```c
 #include <antidbg/antidbg.h>
@@ -69,7 +69,7 @@ int main(void) {
 }
 ```
 
-## 📦 Setup
+## Setup
 
 ### Build & test (one command)
 
@@ -116,7 +116,7 @@ if antidbg.detected():
     print("running under a debugger:", antidbg.flags_to_string(antidbg.scan()))
 ```
 
-## 📖 API
+## API
 
 | Function | Description |
 |----------|-------------|
@@ -141,12 +141,12 @@ cfg.techniques  = ~ADBG_ANALYSIS_TOOL;   // all bits except the tool scan
 adbg_guard_start(&cfg);
 ```
 
-## 🧠 How it works
+## How it works
 
 See **[docs/TECHNIQUES.md](docs/TECHNIQUES.md)** for the full table of techniques
 per platform and how each can be bypassed.
 
-## ⚠️ Scope & honest limitations
+## Scope and limitations
 
 Anti-debugging is **deterrence, not DRM**. It raises the cost of reversing or
 tampering with your software; it does not make either impossible. A determined
@@ -157,7 +157,7 @@ on the door.
 
 Intended for **protecting software you own or are authorized to protect**.
 
-## 📁 Layout
+## Layout
 
 ```
 antidbg/
@@ -169,6 +169,6 @@ antidbg/
 └── docs/TECHNIQUES.md          # technique reference
 ```
 
-## 📄 License
+## License
 
 MIT — see [LICENSE](LICENSE).
