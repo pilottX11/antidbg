@@ -6,9 +6,8 @@
 
 Detect and react to debuggers in your process — with one line of code.
 
-[![CI](https://img.shields.io/github/actions/workflow/status/OWNER/antidbg/ci.yml?branch=main&label=build)](../../actions)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-![Language: C99](https://img.shields.io/badge/language-C++-blue.svg)
+![Language: C](https://img.shields.io/badge/language-C-blue.svg)
 ![Platforms](https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS-informational.svg)
 ![Dependencies](https://img.shields.io/badge/dependencies-none-success.svg)
 ![Version](https://img.shields.io/badge/version-1.0.0-orange.svg)
