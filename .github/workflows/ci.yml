@@ -1,0 +1,47 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build-and-test:
+    name: ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure
+        run: cmake -B build -DANTIDBG_BUILD_EXAMPLES=ON -DANTIDBG_BUILD_TESTS=ON
+
+      - name: Build
+        run: cmake --build build --config Release
+
+      - name: Test
+        run: ctest --test-dir build --build-config Release --output-on-failure
+
+  python-binding:
+    name: python binding (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Build shared library
+        run: |
+          cmake -B build -DANTIDBG_SHARED=ON -DANTIDBG_BUILD_TESTS=OFF -DANTIDBG_BUILD_EXAMPLES=OFF
+          cmake --build build --config Release
+      - name: Smoke-test binding
+        run: python bindings/python/antidbg.py

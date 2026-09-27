@@ -1,0 +1,39 @@
+# Build directories
+build/
+build_*/
+cmake-build-*/
+out/
+
+# Object files, libraries, binaries
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.so.*
+*.dylib
+*.dll
+*.exe
+*.pdb
+*.ilk
+*.exp
+
+# Example/test output binaries
+antidbg_basic
+antidbg_protect
+antidbg_tests
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Editor / IDE
+.vs/
+.vscode/
+.idea/
+*.user
+
+# OS cruft
+.DS_Store
+Thumbs.db

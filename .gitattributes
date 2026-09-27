@@ -1,2 +1,5 @@
-# Auto detect text files and perform LF normalization
+# Normalize line endings. Let git handle text; keep shell scripts LF so they
+# stay executable on Unix even when checked out on Windows.
 * text=auto
+*.sh   text eol=lf
+*.bat  text eol=crlf
